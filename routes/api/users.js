@@ -7,7 +7,6 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 const User = require("../../models/User");
-const { db } = require("../../models/User");
 
 // @route   POST api/users
 // @desc    Register user
@@ -68,7 +67,7 @@ router.post(
 
       const payload = {
         user: {
-          id: user._id,
+          id: user.id,
         },
       };
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/content/images/Logo.png" sizes="32x32">
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Music Feed</title>
+</head>
+
+<body>
+  <div class="edit-project">
+    <div class="navbar">
+      <div class="navbar__left">
+        <a class="navbar__left__logo" href="index.html">
+          <img src="./content//images/Logo.png" alt="Logo" />
+          <p>MusicFeed</p>
+        </a>
+      </div>
+      <div class="navbar__links">
+        <a class='btn btn-red' href="login.html">Login</a>
+        <a class='btn btn-green' href="users.html">Users</a>
+      </div>
+    </div>
+    <div class="edit-project__inner">
+      <div class="edit-project__inner__title">
+        <h1>Create a project</h1>
+        <p>Lets get some info into your project</p>
+        <p>* = required fields</p>
+      </div>
+      <div class="edit-project__inner__inputs">
+        <div class="edit-project__inner__inputs__input">
+          <input type="text" placeholder="Name*">
+          <p>Whats title of song, album or other</p>
+        </div>
+        <div class="edit-project__inner__inputs__input">
+          <input type="text" placeholder="Genre*">
+          <p>What genre it belongs to (eg. Rock, Electro, Country,...) Please write in one value</p>
+        </div>
+        <div class="edit-project__inner__inputs__input">
+          <select type="text" placeholder="Your role*">
+            <option value="0">* Select Role</option>
+            <option value="Solo Musician">Author</option>
+            <option value="Band Member">Contributer</option>
+            <option value="DJ">Writer</option>
+            <option value="Song Writer">Covering a Song</option>
+          </select>
+          <p>Select one of presented</p>
+        </div>
+        <div class="edit-project__inner__inputs__input">
+          <input type="date">
+          <p>*Starting date or aproximate</p>
+        </div>
+        <div class="edit-project__inner__inputs__input__checkbox">
+          <input type="checkbox">
+          <p>Current Project</p>
+        </div>
+        <div class="edit-project__inner__inputs__input">
+          <input type="date">
+          <p>Ending date or aproximate</p>
+        </div>
+        <div class="edit-project__inner__inputs__input">
+          <textarea name="" id="" cols="30" rows="10" placeholder="A short description of project"></textarea>
+
+        </div>
+      </div>
+      <div class="edit-project__inner__submit">
+        <button class="btn btn-black">Submit</button>
+        <a href="#" class="btn btn-orange">Go Back</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

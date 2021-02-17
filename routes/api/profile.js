@@ -26,7 +26,6 @@ router.post(
       status,
       website,
       location,
-      artisticName,
       instruments,
       bio,
       youtube,
@@ -39,7 +38,6 @@ router.post(
 
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (artisticName) profileFields.artisticName = artisticName;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
@@ -174,7 +172,7 @@ router.put(
   [
     [
       check("title", "Title is required").not().isEmpty(),
-      check("type", "Type is required").not().isEmpty(),
+      check("genre", "Genere is required").not().isEmpty(),
       check("role", "Your role is required").not().isEmpty(),
       check("from", "From date is required").not().isEmpty(),
     ],
@@ -186,24 +184,12 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      title,
-      type,
-      role,
-      author,
-      location,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { title, genre, role, from, to, current, description } = req.body;
 
     const newProjects = {
       title,
-      type,
+      genre,
       role,
-      author,
-      location,
       from,
       to,
       current,
@@ -253,7 +239,6 @@ router.put(
   [
     [
       check("school", "School is required").not().isEmpty(),
-      check("fieldofstudy", "Field of study is required").not().isEmpty(),
       check("from", "Starting time is required").not().isEmpty(),
     ],
     auth,
@@ -264,19 +249,11 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      school,
-      instrument,
-      fieldofstudy,
-      from,
-      to,
-      description,
-    } = req.body;
+    const { school, instrument, from, to, description } = req.body;
 
     const newEdu = {
       school,
       instrument,
-      fieldofstudy,
       from,
       to,
       description,

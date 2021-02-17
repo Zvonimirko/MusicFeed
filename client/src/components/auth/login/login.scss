@@ -1,0 +1,112 @@
+.login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #7082db;
+
+  &__inner {
+    display: flex;
+    flex-grow: 1;
+
+    &__left {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 100px;
+
+      h1 {
+        font-size: 4.5vw;
+        font-weight: lighter;
+        position: relative;
+        width: 10vw;
+        z-index: 1;
+      }
+
+      &__arrow {
+        background-image: url("../../../images/Arrow.png");
+        transform: translate(11vw, -2.7vw);
+        height: 1.6vh;
+        width: 9vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+    &__right {
+      display: flex;
+      flex-grow: 1;
+      align-self: center;
+      flex-direction: column;
+      gap: 100px;
+      padding-left: 200px;
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        justify-content: flex-start;
+        z-index: 1;
+
+        input {
+          width: 300px;
+          border: none;
+          padding-left: 4px;
+          font-size: 1.5em;
+          outline: none;
+          border-radius: 2px;
+        }
+
+        button {
+          margin-top: 20px;
+        }
+      }
+
+      &__submit-link {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: flex-start;
+
+        p {
+          z-index: 2;
+
+          a {
+            font-size: 1.5em;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .login-circle-1 {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background-color: rgba(219, 147, 112, 0.1);
+    bottom: 10vw;
+    left: 12vw;
+  }
+
+  .login-circle-2 {
+    position: absolute;
+    width: 17vw;
+    height: 17vw;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 1vw;
+    right: 15vw;
+  }
+
+  .login-circle-3 {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: rgba(112, 219, 147, 0.1);
+    bottom: 4vw;
+    right: 23vw;
+  }
+}

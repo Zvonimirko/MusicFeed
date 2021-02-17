@@ -5,9 +5,6 @@ const profileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  artisticName: {
-    type: String,
-  },
   website: {
     type: String,
   },
@@ -31,20 +28,13 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      type: {
+      genre: {
         type: String,
         required: true,
       },
       role: {
         type: String,
         required: true,
-      },
-      author: {
-        type: Boolean,
-        default: false,
-      },
-      location: {
-        type: String,
       },
       from: {
         type: Date,
@@ -68,12 +58,8 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      instrument: {
+      areaofstudy: {
         type: String,
-      },
-      fieldofstudy: {
-        type: String,
-        required: true,
       },
       from: {
         type: Date,

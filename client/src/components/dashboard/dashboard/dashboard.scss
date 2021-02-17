@@ -1,0 +1,115 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffe2d5, #c7fff5);
+  padding-top: 100px;
+
+  &__no-account {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding-bottom: 3vh;
+
+    h1 {
+      font-size: 3em;
+      background: linear-gradient(to bottom, #db9370 30%, #70dbc9 70%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    span {
+      font-weight: bolder;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-grow: 1;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 4vh;
+      align-items: center;
+      flex-basis: 50%;
+      flex-grow: 1;
+
+      &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+
+        &__edit {
+          display: flex;
+          gap: 3vw;
+          padding-bottom: 3vh;
+          border-bottom: solid 1px black;
+          justify-content: center;
+        }
+
+        &__projects {
+          border-bottom: solid 1px black;
+
+          table {
+            padding: 10px;
+
+            th,
+            td {
+              padding: 10px;
+            }
+
+            td {
+              text-align: center;
+            }
+          }
+        }
+
+        &__education {
+          table {
+            padding: 10px;
+
+            th,
+            td {
+              padding: 10px;
+            }
+
+            td {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-basis: 50%;
+      flex-grow: 1;
+      justify-items: center;
+
+      &__picture {
+        background: url("../../../images/colorful-music-notes-with-transparent-background-PNG.png");
+        max-height: 80vh;
+        min-width: 40vw;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+      }
+    }
+  }
+}

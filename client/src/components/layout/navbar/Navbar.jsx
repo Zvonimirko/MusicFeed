@@ -10,9 +10,9 @@ import "./navbar.scss";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <div className="navbar__links">
-      <Link className="btn btn-red" onClick={logout}>
+      <button className="btn btn-red" onClick={logout}>
         Logout
-      </Link>
+      </button>
       <Link className="btn btn-green" to="/users">
         Users
       </Link>

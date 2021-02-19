@@ -30,7 +30,6 @@ const profileSchema = new mongoose.Schema({
       },
       genre: {
         type: String,
-        required: true,
       },
       role: {
         type: String,
@@ -64,6 +63,10 @@ const profileSchema = new mongoose.Schema({
       from: {
         type: Date,
         required: true,
+      },
+      current: {
+        type: Boolean,
+        defalut: false,
       },
       to: {
         type: Date,

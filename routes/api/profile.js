@@ -163,16 +163,15 @@ router.delete("/", auth, async (req, res) => {
   }
 });
 
-// @route   PUT api/profile/projects
+// @route   PUT api/profile/project
 // @desc    Add projects to profile
 // @access  Private
 
 router.put(
-  "/projects",
+  "/project",
   [
     [
       check("title", "Title is required").not().isEmpty(),
-      check("genre", "Genere is required").not().isEmpty(),
       check("role", "Your role is required").not().isEmpty(),
       check("from", "From date is required").not().isEmpty(),
     ],
@@ -210,11 +209,11 @@ router.put(
   }
 );
 
-// @route   DELETE api/profile/projects/:proj_id
+// @route   DELETE api/profile/project/:proj_id
 // @desc    Delete a project from profile
 // @access  Private
 
-router.delete("/projects/:proj_id", auth, async (req, res) => {
+router.delete("/project/:proj_id", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id });
     profile.projects = profile.projects.filter(
@@ -249,12 +248,13 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { school, instrument, from, to, description } = req.body;
+    const { school, instrument, from, to, current, description } = req.body;
 
     const newEdu = {
       school,
       instrument,
       from,
+      current,
       to,
       description,
     };

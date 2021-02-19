@@ -6,6 +6,7 @@ import Spinner from "../../layout/spinner/Spinner";
 import PropTypes from "prop-types";
 
 import "./dashboard.scss";
+import DashboardActions from "../dashboardActions/DashboardActions";
 
 const Dashboard = ({
   auth: { user },
@@ -32,17 +33,7 @@ const Dashboard = ({
             <div className="dashboard__inner">
               <div className="dashboard__inner__left">
                 <div className="dashboard__inner__left__main">
-                  <div className="dashboard__inner__left__main__edit">
-                    <a href="edit-profile.html" className="btn btn-black">
-                      Edit Profile
-                    </a>
-                    <a href="edit-project.html" className="btn btn-black">
-                      Add Project
-                    </a>
-                    <a href="edit-education.html" className="btn btn-black">
-                      Add Education
-                    </a>
-                  </div>
+                  <DashboardActions />
                   <div className="dashboard__inner__left__main__projects">
                     <h1>Projects</h1>
                     <table style={{ width: "100%" }}>
@@ -109,7 +100,7 @@ const Dashboard = ({
         ) : (
           <div className="dashboard__no-account">
             <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-purple">
+            <Link to="/create-profile" className="btn">
               Create Profile
             </Link>
           </div>

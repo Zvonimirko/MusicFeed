@@ -11,9 +11,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 100px;
     font-size: 2em;
     font-weight: 700;
+
+    .btn {
+      color: rgb(147, 112, 219);
+      display: inline-block;
+      border-radius: 0;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        //transition: width .3s;
+      }
+    }
   }
 
   &__title {

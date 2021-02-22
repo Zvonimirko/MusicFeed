@@ -1,20 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { logout } from "../../../actions/authActions";
 import PropTypes from "prop-types";
 
 import logo from "../../../images/Logo.png";
 import "./navbar.scss";
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout, history }) => {
   const authLinks = (
     <div className="navbar__links">
-      <button className="btn btn-red" onClick={logout}>
+      <button className="btn btn-red" onClick={() => logout(history)}>
         Logout
       </button>
-      <Link className="btn btn-green" to="/users">
-        Users
+      <Link className="btn btn-green" to="/profiles">
+        Profiles
+      </Link>
+      <Link className="btn btn-purple" to="/posts">
+        Posts
       </Link>
     </div>
   );
@@ -24,8 +28,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <Link className="btn btn-red" to="/login">
         Login
       </Link>
-      <Link className="btn btn-green" to="/users">
-        Users
+      <Link className="btn btn-green" to="/profiles">
+        Profiles
       </Link>
     </div>
   );
@@ -52,4 +56,4 @@ Navbar.propTypes = {
   auth: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, { logout })(Navbar);
+export default connect(mapStateToProps, { logout })(withRouter(Navbar));

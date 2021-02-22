@@ -116,7 +116,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticatied: state.authReducer.isAuthenticated,
+  isAuthenticated: state.authReducer.isAuthenticated,
 });
 
 Register.propTypes = {

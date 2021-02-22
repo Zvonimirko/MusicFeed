@@ -1,0 +1,123 @@
+.profile {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #ffe2d5, #c7fff5);
+  padding-top: 100px;
+
+  &__inner {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+
+    &__header {
+      width: 100%;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 5vh;
+
+      &__picture {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 50%;
+        background: linear-gradient(to bottom, #db9370 30%, #70dbc9 70%);
+        position: relative;
+        padding: 3px;
+
+        &__container {
+          background-color: transparent;
+          height: 100%;
+          border-radius: 50%;
+          background-image: url("../../images/IMG_2331.jpg");
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &__items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &__icons {
+          display: flex;
+          width: 60%;
+          justify-content: space-around;
+        }
+      }
+    }
+
+    &__main {
+      width: 95%;
+      display: flex;
+      gap: 4vh;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-self: center;
+      align-items: center;
+      padding: 40px;
+      border: solid 1px black;
+
+      h2 {
+        font-weight: lighter;
+      }
+
+      &__instruments {
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+
+        &__instrument {
+          display: flex;
+          font-weight: bolder;
+          text-shadow: 4px 2px 4px grey;
+        }
+      }
+    }
+
+    &__footer {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-self: center;
+      padding-bottom: 7vh;
+
+      &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 48%;
+        border: solid black 1px;
+        padding: 15px 20px;
+        gap: 5vh;
+        min-height: 20vh;
+
+        &__details {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-around;
+          gap: 3vh;
+
+          span {
+            font-weight: bolder;
+          }
+
+          p {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}

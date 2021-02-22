@@ -49,7 +49,7 @@ const AddEducation = ({ addEducation, history }) => {
               value={school}
               onChange={handleChange}
             />
-            <p>Name of School or University you went to</p>
+            <p>Name of school, university or courses you took</p>
           </div>
           <div className="edit-education__inner__inputs__input">
             <input

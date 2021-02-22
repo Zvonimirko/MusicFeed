@@ -60,6 +60,10 @@ ul {
     background-color: rgba(147, 112, 219, 0.7);
   }
 
+  &-blue {
+    background-color: rgb(54, 42, 218);
+  }
+
   &:hover {
     filter: brightness(0.9);
     cursor: pointer;

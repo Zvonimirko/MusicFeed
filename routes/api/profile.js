@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
+const Post = require("../../models/Post");
 const { check, validationResult } = require("express-validator");
 
 // @route   POST api/profile
@@ -147,6 +148,7 @@ router.get(`/user/:user_id`, async (req, res) => {
 router.delete("/", auth, async (req, res) => {
   try {
     // @todo - remove users posts
+    await Post.deleteMany({ user: req.user.id });
 
     // Delete profile
 
@@ -222,7 +224,7 @@ router.delete("/project/:proj_id", auth, async (req, res) => {
 
     await profile.save();
 
-    res.send("Profile Deleted");
+    res.json(profile);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -248,11 +250,11 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { school, instrument, from, to, current, description } = req.body;
+    const { school, areaofstudy, from, to, current, description } = req.body;
 
     const newEdu = {
       school,
-      instrument,
+      areaofstudy,
       from,
       current,
       to,
@@ -286,7 +288,7 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
     );
 
     await profile.save();
-    res.send(profile);
+    res.json(profile);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");

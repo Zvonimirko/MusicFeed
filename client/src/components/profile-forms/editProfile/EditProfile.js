@@ -77,7 +77,7 @@ const EditProfile = ({
     <div className="edit-profile">
       <div className="edit-profile__inner">
         <div className="edit-profile__inner__title">
-          <h1>Create Your Profile</h1>
+          <h1>Edit Your Profile</h1>
           <p>Lets get some info into your profile</p>
           <p>* = required fields</p>
         </div>

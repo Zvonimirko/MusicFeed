@@ -1,4 +1,6 @@
-.posts {
+// post
+
+.post {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  padding-top: 50px;
+  padding-top: 100px;
 
   &__inner {
     display: flex;
@@ -19,25 +21,10 @@
     width: 60%;
     color: white;
 
-    &__header {
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 5vh;
-      gap: 1vh;
-
-      h1 {
-        font-size: 3em;
-        background: linear-gradient(to bottom, #db9370 30%, #70dbc9 70%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
     &__main {
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-self: center;
       align-items: flex-start;
       gap: 4vh;
       border-bottom: solid 1px white;
@@ -53,12 +40,12 @@
       }
 
       textarea {
+        width: 100%;
         font-size: 1.3em;
         padding: 0.5em;
         outline: none;
         border: none;
         border-radius: 3px;
-        width: 100%;
       }
     }
 
@@ -113,7 +100,6 @@
           flex-direction: column;
           align-items: flex-start;
           justify-content: space-between;
-          width: 100%;
 
           &__text {
             overflow: auto;
@@ -126,43 +112,12 @@
             padding-top: 20px;
             width: 100%;
 
-            &__react {
+            p {
               color: grey;
-              width: 20%;
-
-              &__thumbs {
-                display: flex;
-                padding-top: 20px;
-                align-items: center;
-                gap: 10px;
-                font-size: 1.3em;
-                &__like {
-                  cursor: pointer;
-                  height: 33px;
-                  width: 33px;
-                  background: url("../../images/Like.png");
-                }
-                &__dislike {
-                  height: 33px;
-                  width: 33px;
-                  background: url("../../images/Dislike.png");
-                  cursor: pointer;
-                  background-size: cover;
-                  background-repeat: no-repeat;
-                }
-              }
             }
 
-            &__buttons {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 20px;
-
-              .iconify {
-                cursor: pointer;
-              }
+            .iconify {
+              cursor: pointer;
             }
           }
         }

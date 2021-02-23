@@ -6,6 +6,7 @@ import Spinner from "../layout/spinner/Spinner";
 import PostItem from "./PostItem";
 
 import "./posts.scss";
+import PostForm from "./PostForm";
 
 const Posts = ({ post: { posts, loading }, getPosts }) => {
   useEffect(() => {
@@ -20,16 +21,7 @@ const Posts = ({ post: { posts, loading }, getPosts }) => {
           <h1>Posts</h1>
           <p>Welcome to the community</p>
         </div>
-        <div className="posts__inner__main">
-          <p>Leave a comment</p>
-          <textarea
-            name="Comment on this post"
-            cols="30"
-            rows="10"
-            placeholder="Comment on this post"
-          ></textarea>
-          <button className="btn btn-purple">Submit</button>
-        </div>
+        <PostForm />
         <div className="posts__inner__footer">
           {posts.map((post) => (
             <PostItem post={post} key={post._id} />

@@ -15,10 +15,12 @@ const PostItem = ({
   return (
     <div className="posts__inner__footer__post">
       <div className="posts__inner__footer__post__left">
-        <div className="posts__inner__footer__post__left__picture">
-          <div className="posts__inner__footer__post__left__picture__container"></div>
-        </div>
-        <p>{name}</p>
+        <Link to={`/profile/${user}`}>
+          <div className="posts__inner__footer__post__left__picture">
+            <div className="posts__inner__footer__post__left__picture__container"></div>
+          </div>
+          <p>{name}</p>
+        </Link>
       </div>
       <div className="posts__inner__footer__post__right">
         <p className="posts__inner__footer__post__right__text">{text}</p>
@@ -40,7 +42,7 @@ const PostItem = ({
             </div>
           </div>
           <div className="posts__inner__footer__post__right__bottom__buttons">
-            <Link to={`/post/${_id}`} className="btn btn-red">
+            <Link to={`/posts/${_id}`} className="btn btn-red">
               Discussion {comments.length > 0 && comments.length}
             </Link>
             {!auth.loading && user === auth.user._id && (

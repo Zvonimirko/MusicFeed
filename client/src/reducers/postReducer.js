@@ -3,6 +3,8 @@ import {
   POST_ERROR,
   UPDATE_LIKES,
   DELETE_POST,
+  ADD_POST,
+  GET_POST,
 } from "../actions/types";
 
 const initialState = {
@@ -20,10 +22,22 @@ const postReducer = (state = initialState, action) => {
         posts: action.payload,
         loading: false,
       };
+    case GET_POST:
+      return {
+        ...state,
+        post: action.payload,
+        loading: false,
+      };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [action.payload, ...state.posts],
+        loading: false,
+      };
     case DELETE_POST:
       return {
         ...state,
-        posts: state.posts.fliter((post) => post._id !== action.payload),
+        posts: state.posts.filter((post) => post._id !== action.payload),
         loading: false,
       };
     case POST_ERROR:

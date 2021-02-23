@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://zoc123:zoc123@musicfeed.un3ik.mongodb.net/musicfeed?retryWrites=true&w=majority",
+  "JWTSecret": "myjwtsecret"
+}

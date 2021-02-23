@@ -63,8 +63,8 @@
         display: flex;
 
         &__picture {
-          width: 15vw;
-          height: 15vw;
+          width: 14vw;
+          height: 14vw;
           border-radius: 50%;
           background: linear-gradient(to bottom, #db9370 30%, #70dbc9 70%);
           position: relative;
@@ -73,6 +73,7 @@
           &__container {
             background-color: transparent;
             height: 100%;
+            width: 100%;
             border-radius: 50%;
             background-image: url("../../../images/IMG_2331.jpg");
             background-position: center center;

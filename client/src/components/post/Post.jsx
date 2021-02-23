@@ -6,6 +6,8 @@ import { getPost } from "../../actions/postActions";
 
 import "./post.scss";
 import PostComment from "./PostComment";
+import CommentForm from "./CommentForm";
+import CommentItem from "./CommentItem";
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
   useEffect(() => {
@@ -17,19 +19,16 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   ) : (
     <div className="post">
       <div className="post__inner">
-        <div className="post__inner__main">
-          <p>Leave a comment</p>
-          <textarea
-            name="Comment on this post"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Comment on this post"
-          ></textarea>
-          <button className="btn btn-purple">Submit</button>
-        </div>
+        <PostComment post={post} loading={loading} />
+        <CommentForm postId={post._id} />
         <div className="post__inner__footer">
-          <PostComment post={post} />
+          {post.comments.map((comment) => (
+            <CommentItem
+              key={comment._id}
+              comment={comment}
+              postId={post._id}
+            />
+          ))}
         </div>
       </div>
     </div>

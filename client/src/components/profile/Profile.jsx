@@ -21,7 +21,8 @@ const Profile = ({
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
-
+  console.log(profile);
+  console.log(auth);
   return (
     <>
       {profile === null || loading ? (
@@ -41,7 +42,9 @@ const Profile = ({
                     ))}
                   </>
                 ) : (
-                  <h2>No Projects</h2>
+                  <Link to="/add-project">
+                    <h4>Add Project</h4>
+                  </Link>
                 )}
               </div>
               <div className="profile__inner__footer__container">
@@ -53,7 +56,7 @@ const Profile = ({
                     ))}
                   </>
                 ) : (
-                  <h2>No Education</h2>
+                  <p>hi</p>
                 )}
               </div>
             </div>

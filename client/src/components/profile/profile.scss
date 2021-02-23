@@ -101,6 +101,28 @@
         gap: 5vh;
         min-height: 20vh;
 
+        h4 {
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #db9370 30%, #70dbc9 70%);
+            transition: width 0.3s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+        }
+
+        h2 {
+          background: linear-gradient(to bottom, #db9370 30%, #70dbc9 70%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
         &__details {
           width: 100%;
           display: flex;

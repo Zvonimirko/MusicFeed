@@ -10,8 +10,6 @@ const Landing = ({ isAuthenticated }) => {
     return <Redirect to="/dashboard" />;
   }
 
-  console.log(isAuthenticated);
-
   return (
     <div className="landing">
       <div className="landing__inner">

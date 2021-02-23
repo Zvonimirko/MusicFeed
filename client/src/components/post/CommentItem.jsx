@@ -12,34 +12,36 @@ const CommentItem = ({
   deleteComment,
 }) => {
   return (
-    <div className="post__inner__footer__post">
-      <div className="post__inner__footer__post__left">
-        <Link to={`/profile/${user}`}>
-          <div className="post__inner__footer__post__left__picture">
-            <div className="post__inner__footer__post__left__picture__container"></div>
-          </div>
-          <p>{name}</p>
-        </Link>
-      </div>
-      <div className="post__inner__footer__post__right">
-        <p className="post__inner__footer__post__right__text">{text}</p>
-        <div className="post__inner__footer__post__right__bottom">
-          <p>
-            Posted on: <Moment format="YYYY/MM/DD">{date}</Moment>
-          </p>
-          {!auth.loading && user === auth.user._id && (
-            <div onClick={() => deleteComment(postId, _id)}>
-              <span
-                className="iconify"
-                data-inline="false"
-                data-icon="ant-design:delete-outlined"
-                style={{ fontSize: "40px" }}
-              ></span>
+    postId && (
+      <div className="post__inner__footer__post">
+        <div className="post__inner__footer__post__left">
+          <Link to={`/profile/${user}`}>
+            <div className="post__inner__footer__post__left__picture">
+              <div className="post__inner__footer__post__left__picture__container"></div>
             </div>
-          )}
+            <p>{name}</p>
+          </Link>
+        </div>
+        <div className="post__inner__footer__post__right">
+          <p className="post__inner__footer__post__right__text">{text}</p>
+          <div className="post__inner__footer__post__right__bottom">
+            <p>
+              Posted on: <Moment format="YYYY/MM/DD">{date}</Moment>
+            </p>
+            {!auth.loading && user === auth.user._id && (
+              <div onClick={() => deleteComment(postId, _id)}>
+                <span
+                  className="iconify"
+                  data-inline="false"
+                  data-icon="ant-design:delete-outlined"
+                  style={{ fontSize: "40px" }}
+                ></span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 

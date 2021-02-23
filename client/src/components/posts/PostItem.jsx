@@ -12,6 +12,7 @@ const PostItem = ({
   removeLike,
   deletePost,
 }) => {
+  console.log(_id);
   return (
     <div className="posts__inner__footer__post">
       <div className="posts__inner__footer__post__left">

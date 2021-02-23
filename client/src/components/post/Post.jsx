@@ -14,7 +14,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     getPost(match.params.id);
   }, [getPost, match.params.id]);
 
-  return loading ? (
+  return loading || post === null ? (
     <Spinner />
   ) : (
     <div className="post">

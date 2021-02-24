@@ -6,7 +6,6 @@ import Spinner from "../layout/spinner/Spinner.js";
 import { getProfileById } from "../../actions/profileActions";
 
 import "./profile.scss";
-import { Link } from "react-router-dom";
 import ProfileTop from "./ProfileTop.jsx";
 import ProfileAbout from "./ProfileAbout.jsx";
 import ProfileProject from "./ProfileProject.jsx";

@@ -25,7 +25,7 @@ const Profiles = ({ profile: { profiles, loading }, getProfiles }) => {
                 <h1>Profiles</h1>
                 <p>Browse and connect with people</p>
               </div>
-              <input type="text" placeholder="Search" />
+              {/* <input type="text" placeholder="Search" /> */}
             </div>
             <div className="profiles__inner__bottom">
               {profiles.length > 0 ? (

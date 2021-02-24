@@ -13,7 +13,7 @@ import ProfileProject from "./ProfileProject.jsx";
 import ProfileEducation from "./ProfileEducation.jsx";
 
 const Profile = ({
-  profile: { profile, loading },
+  profile: { profile, loading, user },
   auth,
   getProfileById,
   match,
@@ -21,8 +21,7 @@ const Profile = ({
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
-  console.log(profile);
-  console.log(auth);
+
   return (
     <>
       {profile === null || loading ? (
@@ -42,9 +41,7 @@ const Profile = ({
                     ))}
                   </>
                 ) : (
-                  <Link to="/add-project">
-                    <h4>Add Project</h4>
-                  </Link>
+                  <h3>No Project</h3>
                 )}
               </div>
               <div className="profile__inner__footer__container">
@@ -56,7 +53,7 @@ const Profile = ({
                     ))}
                   </>
                 ) : (
-                  <p>hi</p>
+                  <h3>No Education</h3>
                 )}
               </div>
             </div>
